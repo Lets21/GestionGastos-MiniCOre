@@ -1,0 +1,98 @@
+[
+    {
+        "model": "gestion.departamento",
+        "pk": 1,
+        "fields": {
+            "nombre": "IT"
+        }
+    },
+    {
+        "model": "gestion.departamento",
+        "pk": 2,
+        "fields": {
+            "nombre": "Desarrollo"
+        }
+    },
+    {
+        "model": "gestion.departamento",
+        "pk": 3,
+        "fields": {
+            "nombre": "Diseño"
+        }
+    },
+    {
+        "model": "gestion.departamento",
+        "pk": 4,
+        "fields": {
+            "nombre": "Marketing"
+        }
+    },
+    {
+        "model": "gestion.empleado",
+        "pk": 1,
+        "fields": {
+            "nombre": "Zoila Baca",
+            "departamento": 1
+        }
+    },
+    {
+        "model": "gestion.empleado",
+        "pk": 2,
+        "fields": {
+            "nombre": "Aquiles C",
+            "departamento": 2
+        }
+    },
+    {
+        "model": "gestion.empleado",
+        "pk": 3,
+        "fields": {
+            "nombre": "Johnhy Metas",
+            "departamento": 2
+        }
+    },
+    {
+        "model": "gestion.gasto",
+        "pk": 1,
+        "fields": {
+            "descripcion": "UPS",
+            "monto": "60.00",
+            "fecha": "2025-11-16",
+            "empleado": 1,
+            "departamento": 1
+        }
+    },
+    {
+        "model": "gestion.gasto",
+        "pk": 2,
+        "fields": {
+            "descripcion": "Monitor secundario",
+            "monto": "250.00",
+            "fecha": "2025-11-22",
+            "empleado": 3,
+            "departamento": 2
+        }
+    },
+    {
+        "model": "gestion.gasto",
+        "pk": 3,
+        "fields": {
+            "descripcion": "Rollup",
+            "monto": "60.00",
+            "fecha": "2025-11-23",
+            "empleado": 3,
+            "departamento": 3
+        }
+    },
+    {
+        "model": "gestion.gasto",
+        "pk": 4,
+        "fields": {
+            "descripcion": "UPS",
+            "monto": "60.00",
+            "fecha": "2025-11-25",
+            "empleado": 1,
+            "departamento": 1
+        }
+    }
+]

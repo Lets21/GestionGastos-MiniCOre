@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados de los Gastos</title>
+    <link rel="stylesheet" href="{% static 'gestion/css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Resultados del {{ fecha_inicio }} al {{ fecha_fin }}</h2>
+
+        <section>
+            <h3>Gastos en el Rango de Fechas</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Empleado</th>
+                        <th>Departamento</th>
+                        <th>Descripción</th>
+                        <th>Monto</th>
+                        <th>Fecha</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for gasto in gastos %}
+                        <tr>
+                            <td>{{ gasto.empleado.nombre }}</td>
+                            <td>{{ gasto.departamento.nombre }}</td>
+                            <td>{{ gasto.descripcion }}</td>
+                            <td>S/. {{ gasto.monto }}</td>
+                            <td>{{ gasto.fecha }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h3>Total por Departamento</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Departamento</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for total in totales_departamento %}
+                        <tr>
+                            <td>{{ total.departamento__nombre }}</td>
+                            <td>S/. {{ total.total }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </section>
+
+        <a href="{% url 'filtrar_gastos' %}" class="nav-link">Volver a Filtrar</a>
+    </div>
+</body>
+</html>
