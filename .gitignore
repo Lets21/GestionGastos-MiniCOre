@@ -40,3 +40,7 @@ ENV/
 # OS
 .DS_Store
 Thumbs.db
+
+# Static files
+staticfiles/
+*.pyc
