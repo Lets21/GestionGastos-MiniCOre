@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from decouple import config, Csv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -22,15 +23,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY', '&^3f+=3hf22w6_!$mx^3lqspvdiauh_b^d@%hf=dfn5nj1c#j5')
+SECRET_KEY = config('psg$xm*fk*8te7em*bpr@2)%ryq@1drbxim@1zb(eez(_@@^6s')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 # ALLOWED_HOSTS
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
-if not ALLOWED_HOSTS:
-    ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='*', cast=Csv())
 
 
 # Application definition
